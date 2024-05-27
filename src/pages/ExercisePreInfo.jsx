@@ -1,4 +1,3 @@
-// ExercisePreInfo.js
 import React, { useState } from 'react';
 import { Box, Button, Card, CardContent, Typography, CardMedia, TextField, IconButton } from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';

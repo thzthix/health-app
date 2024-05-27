@@ -3,7 +3,7 @@ import { drawConnectors, drawLandmarks } from '@mediapipe/drawing_utils';
 import { POSE_CONNECTIONS } from '@mediapipe/pose';
 import { Camera } from '@mediapipe/camera_utils';
 
-export function initHolistic(videoRef, canvasRef) {
+export function initHolistic(videoElement, canvasElement, stream) {
   const holistic = new Holistic({
     locateFile: (file) => {
       return `https://cdn.jsdelivr.net/npm/@mediapipe/holistic/${file}`;
@@ -43,19 +43,16 @@ export function initHolistic(videoRef, canvasRef) {
     canvasCtx.restore();
   });
 
-  if (typeof navigator.mediaDevices.getUserMedia === 'function') {
-    navigator.mediaDevices.getUserMedia({ video: true }).then((stream) => {
-      videoRef.current.srcObject = stream;
-      videoRef.current.play();
+    // 여기서 미디어 스트림을 직접 할당합니다.
+    videoElement.srcObject = stream;
+    videoElement.play();
+  
+    const camera = new Camera(videoElement, {
+      onFrame: async () => {
+        await holistic.send({ image: videoElement });
+      },
+      width: 1280,
+      height: 720,
     });
-  }
-
-  const camera = new Camera(videoRef.current, {
-    onFrame: async () => {
-      await holistic.send({ image: videoRef.current });
-    },
-    width: 1280,
-    height: 720,
-  });
-  camera.start();
+    camera.start();
 }
