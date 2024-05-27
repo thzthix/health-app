@@ -1,0 +1,99 @@
+.sidebar {
+    transition: width 0.3s;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* 설정 메뉴를 아래로 배치하기 위해 변경 */
+    background-color: #fff; /* 밝은 배경색 */
+    color: #007bff; /* 파란색 글씨 */
+    width: 60px;
+    
+}
+
+.sidebar.open {
+    width: 200px;
+}
+
+.sidebar-header {
+    display: flex;
+    align-items: center; /* 로고와 햄버거 메뉴를 세로 방향으로 정렬 */
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    margin-right: 10px; /* 로고와 햄버거 메뉴 사이의 간격 조정 */
+}
+
+.logo span {
+    margin-left: 10px; /* 로고 아이콘과 텍스트 사이 간격 조정 */
+    font-size: 1.2em; /* 로고 텍스트 크기 조정 */
+}
+
+.hamburger-icon {
+    cursor: pointer;
+    font-size: 1.5em;
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1; /* 설정 메뉴를 아래로 밀어내기 위해 추가 */
+}
+
+.sidebar-menu li {
+    padding: 0.6rem 1rem;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.sidebar-menu li a {
+    display: flex;
+    align-items: center;
+    color: #007bff;
+    text-decoration: none;
+    
+}
+
+.sidebar-menu li a:hover {
+    background-color: #007bff; /* 배경색 */
+    color: white; /* 글자색 */
+}
+
+.sidebar-menu li a:hover .icon {
+    color: white; /* 아이콘 색상을 흰색으로 변경 */
+}
+
+.sidebar-menu li a span {
+    margin-left: 15px;
+    font-size: 1.2em;
+}
+
+.settings {
+    padding: 1rem;
+    transition: background-color 0.3s, color 0.3s; /* hover 효과를 위한 transition 추가 */
+}
+
+.settings a {
+    display: flex;
+    align-items: center;
+    color: #007bff;
+    text-decoration: none;
+}
+.settings a span{
+    margin-left: 15px;
+    font-size: 1.2em;
+
+}
+.settings a:hover {
+    background-color: #007bff; /* 배경색 */
+    color: white; /* 글자색 */
+}
+
+.settings a:hover .icon {
+    color: white; /* 아이콘 색상을 흰색으로 변경 */
+}

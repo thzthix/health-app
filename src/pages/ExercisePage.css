@@ -1,0 +1,12 @@
+/* ExercisePage.css */
+.centered-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* 뷰포트의 전체 높이 */
+  }
+  
+  .centered-row {
+    justify-content: center; /* Row 내의 Col들을 중앙으로 정렬 */
+  }
+  

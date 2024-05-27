@@ -1,0 +1,51 @@
+/* SignUpPage.css 추가 */
+.signup-title {
+    margin-top:1rem;
+    text-align: center; /* 제목을 가운데 정렬 */
+    font-size: 2rem; /* 제목 글꼴 크기 */
+    color: #007bff; /* 제목 색상 */
+    margin-bottom: 2.7rem;
+}
+
+/* 기존 CSS */
+.signup-container {
+    display: flex;
+    flex-direction: column; /* Flex 방향을 세로로 설정 */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 50px;
+}
+
+.signup-form {
+    padding: 30px;
+    width: 100%; /* 폼 너비 설정 */
+    max-width: 700px; 
+    border-radius: 15px;
+    -webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.1);
+    -moz-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.1);
+    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.1);
+    background-color: #fff;
+}
+
+.signup-form .form-group {
+    margin-bottom: 1rem;
+}
+
+/* input과 레이블 사이의 간격 추가 */
+.signup-form .form-control {
+    margin-top: 5px;
+    margin-bottom: 15px; /* input 칸 아래 여백 추가 */
+}
+
+.signup-button {
+    background-color: #007bff;
+    border-color: #007bff;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.signup-button:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}

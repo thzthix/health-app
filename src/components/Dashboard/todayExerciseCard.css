@@ -1,0 +1,14 @@
+.card-today{}
+.card-body svg{
+    font-size: 2rem;
+    color:blue
+}
+.card-value{
+    font-size: 1.5rem;
+}
+.card-title{
+    font-size: 0.8rem;
+}
+.card .row{
+    align-items: baseline;
+}
