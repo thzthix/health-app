@@ -15,7 +15,7 @@ import { ExerciseProvider } from './Contexts/ExerciseContext';
 import PostPage from './pages/PostPage'; 
 import PostForm from './pages/PostForm';
 import { ExerciseFeedbackProvider } from './Contexts/ExcerciseFeedback';
-
+import WebcamPage from './pages/WebcamPage';
 // import "bootstrap-icons/font/bootstrap-icons.css"
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -38,6 +38,7 @@ const App=()=> {
       <Route path='/login' element={<LoginPage />} />
       <Route path="/signup" element={<SignupPage />} />
       <Route path="/exercise" element={<ExercisePage />} />
+      <Route path="/webcam" element={<WebcamPage />} />
           <Route path="/board" element={<BoardPage />} />
           <Route path="/board/:id" element={<PostPage/>} />
           <Route path="/board/write" element={<PostForm/>} />

@@ -23,9 +23,8 @@ const ExercisePreInfo = ({ exercise, onConfirm }) => {
 
   const handleConfirm = () => {
     updateReps(reps); // 컨텍스트에 reps 값을 저장합니다.
-    onConfirm(); // onConfirm 호출하여 이전 페이지로 돌아갑니다.
+    onConfirm(); // onConfirm 호출하여 웹캠 페이지로 이동합니다.
   };
-
   return (
     <Box display="flex" justifyContent="center" alignItems="center" height="100vh">
       <Card sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, maxWidth: 900 }}>
