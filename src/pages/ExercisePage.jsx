@@ -3,19 +3,22 @@ import { Card, Container, Row, Col } from 'react-bootstrap';
 import exercisesData from "../assets/exerciseData";
 import ExercisePreInfo from "./ExercisePreInfo";
 import './ExercisePage.css';
-import { useNavigate } from 'react-router-dom'; // useNavigate 훅을 추가
+import { useExerciseFeedback } from '../Contexts/ExcerciseFeedback';
+import { useNavigate } from 'react-router-dom'; 
 
 
 const ExercisePage = () => {
   const [selectedExercise, setSelectedExercise] = useState(null);
   const navigate = useNavigate();
-
+  const { exerciseData, updateExerciseData } = useExerciseFeedback();
   const handleExerciseClick = (exerciseId) => {
     const exercise = exercisesData.find(ex => ex.id === exerciseId);
     setSelectedExercise(exercise);
   };
 
-  const handleConfirm = () => {
+  const handleConfirm = (reps) => {
+    updateExerciseData(selectedExercise.name, reps); // 수정: exercise 이름과 reps 함께 저장
+    console.log(exerciseData)
     navigate('/webcam'); 
   };
 

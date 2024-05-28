@@ -2,11 +2,10 @@ import React, { useState } from 'react';
 import { Box, Button, Card, CardContent, Typography, CardMedia, TextField, IconButton } from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import SwipeableViews from 'react-swipeable-views-react-18-fix';
-import { useExerciseFeedback } from '../Contexts/ExcerciseFeedback';
+
 
 const ExercisePreInfo = ({ exercise, onConfirm }) => {
   const [index, setIndex] = useState(0);
-  const { updateReps } = useExerciseFeedback();
   const [reps, setReps] = useState('');
 
   const handleBack = () => {
@@ -22,8 +21,7 @@ const ExercisePreInfo = ({ exercise, onConfirm }) => {
   };
 
   const handleConfirm = () => {
-    updateReps(reps); // 컨텍스트에 reps 값을 저장합니다.
-    onConfirm(); // onConfirm 호출하여 웹캠 페이지로 이동합니다.
+  onConfirm(reps); // onConfirm 호출
   };
   return (
     <Box display="flex" justifyContent="center" alignItems="center" height="100vh">

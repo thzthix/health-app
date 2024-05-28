@@ -19,9 +19,9 @@ export function initHolistic(videoElement, canvasRef, stream, videoRef) {
 
   holistic.onResults((results) => {
    
-   console.log("before current",canvasRef.current)
+   
     if (canvasRef.current) {
-      console.log("after current",canvasRef.current)
+   
     const canvasCtx = canvasRef.current.getContext('2d');
     canvasCtx.save();
     

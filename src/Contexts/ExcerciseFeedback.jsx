@@ -4,26 +4,22 @@ const ExerciseFeedbackContext = createContext();
 
 export const ExerciseFeedbackProvider = ({ children }) => {
   const [exerciseData, setExerciseData] = useState({
-    exercise: null,
+    exercise: '',
     reps: '',
+    score: 0, 
   });
 
-  const updateExercise = (newExercise) => {
-    setExerciseData((prevData) => ({
-      ...prevData,
+  
+  const updateExerciseData = (newExercise, newReps) => {
+    setExerciseData({
       exercise: newExercise,
-    }));
-  };
-
-  const updateReps = (newReps) => {
-    setExerciseData((prevData) => ({
-      ...prevData,
       reps: newReps,
-    }));
+      score: 0, // score는 업데이트 시에도 0으로 유지
+    });
   };
 
   return (
-    <ExerciseFeedbackContext.Provider value={{ exerciseData, updateExercise, updateReps }}>
+    <ExerciseFeedbackContext.Provider value={{ exerciseData, updateExerciseData }}>
       {children}
     </ExerciseFeedbackContext.Provider>
   );
