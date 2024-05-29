@@ -2,15 +2,16 @@ import React, { useState } from 'react';
 import { Box, Button, Card, CardContent, Typography, CardMedia, TextField, IconButton } from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import SwipeableViews from 'react-swipeable-views-react-18-fix';
+import { useNavigate } from 'react-router-dom'; 
 
-
-const ExercisePreInfo = ({ exercise, onConfirm }) => {
+const ExercisePreInfo = ({ exercise, onConfirm,setSelectedExercise }) => {
   const [index, setIndex] = useState(0);
   const [reps, setReps] = useState('');
+  const navigate = useNavigate();
 
   const handleBack = () => {
     if (index === 0) {
-      onConfirm(); // 뒤로가기 호출 시 onConfirm을 호출하여 부모 컴포넌트에서 상태를 업데이트합니다.
+      setSelectedExercise("")
     } else {
       setIndex(index - 1); // 슬라이드 인덱스를 감소시킵니다.
     }

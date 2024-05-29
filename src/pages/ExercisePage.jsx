@@ -26,7 +26,7 @@ const ExercisePage = () => {
   return (
     <Container className="centered-container">
       { selectedExercise ? (
-        <ExercisePreInfo exercise={selectedExercise} onConfirm={handleConfirm} />
+        <ExercisePreInfo exercise={selectedExercise} onConfirm={handleConfirm} setSelectedExercise={setSelectedExercise}/>
       ) : (
         <Row className="g-4 centered-row">
           {exercisesData.map((exercise) => (
